@@ -1,7 +1,8 @@
 import numpy as np
 from collections import OrderedDict, defaultdict
-import plotly.plotly as py
+from plotly import graph_objs as py
 from plotly.graph_objs import *
+from functools import reduce
 
 class Doc2Vec_nWordContext(object):
     def __init__(self, sentences, learning_rate = 1.0, context_size = 3, nodes_HL = 3):
@@ -162,4 +163,4 @@ if __name__ == '__main__':
 
     model = Doc2Vec_nWordContext(sentences, learning_rate = 1.0, context_size = 3)
     WI, D, vocab = model.train()
-    print WI, D, vocab
+    print( WI, D, vocab)
